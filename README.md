@@ -1,5 +1,5 @@
 # Taxonomical classification
-
+![Alt text]([image link](https://github.com/SIBERanalytics/NPTaxonomy/blob/main/overview_figure.png))
 ## Overview
 
 This repository contains source data and python scripts for natural products (NPs) taxonomical classification and structural insights. From the LOTUS database (https://lotus.naturalproducts.net/download), the multiclassification of NPs within five kingdoms (animal, bacteria, chromista, fungi, and plant) are performed for 133,092 NPs.
