@@ -11,7 +11,8 @@ The generated results and figures are presented in the manuscript titled “Comp
 The python packages in the conda environment for performing the taxonomical classification and structural insights are provided the yaml file (`environment.yml`).
 
 ## Directory structure
-- `1_dataset_preparation/`: Contains source data used in the analysis.
+- `0_data/`: Contains source data used in the analysis.
+- `1_dataset_preparation/`: Contains code for data curation and reproduction of figures.
 - `2_models/`: Contains retrieved and organized datasets for analysis and modeling.
   + `2.1_GCNN_model/`
   + `2.2_SVM_models/`
