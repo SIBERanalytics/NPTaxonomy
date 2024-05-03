@@ -1,0 +1,7 @@
+{
+   "db_score": 5.165848326547337,
+   "tsne_n_iter": 2399,
+   "tsne_perplexity": 10000.0,
+   "tsne_learning_rate": 2772.75,
+   "tsne_kl_divergence": 0.838275671005249
+}
