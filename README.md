@@ -63,4 +63,5 @@ In the folder `3_structural_analysis/3.3_critical_substructures/`
 
 ## Notes
 GCNN models are based off Chemprop (https://github.com/chemprop/chemprop)
+
 Literature benchmarking was done using MAP4-SVM models from the manuscript - Capecchi, A., Reymond, JL. "Classifying natural products from plants, fungi or bacteria using the COCONUT database and machine learning" _J. Cheminform_ **13**, 82 (2021).(https://github.com/reymond-group/Coconut-TMAP-SVM)
