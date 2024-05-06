@@ -1,0 +1,2 @@
+Task,Mean cross_entropy,Standard deviation cross_entropy,Fold 0 cross_entropy,Mean accuracy,Standard deviation accuracy,Fold 0 accuracy,Mean f1,Standard deviation f1,Fold 0 f1,Mean mcc,Standard deviation mcc,Fold 0 mcc
+labels,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan

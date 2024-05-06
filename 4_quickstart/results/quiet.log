@@ -1,0 +1,17 @@
+Fold 0
+Model 0 best validation cross_entropy = 0.034510 on epoch 198
+Model 0 provided with no test set, no metric evaluation will be performed.
+Ensemble test cross_entropy = nan
+Ensemble test accuracy = nan
+Ensemble test f1 = nan
+Ensemble test mcc = nan
+1-fold cross validation
+	Seed 0 ==> test cross_entropy = nan
+	Seed 0 ==> test accuracy = nan
+	Seed 0 ==> test f1 = nan
+	Seed 0 ==> test mcc = nan
+Overall test cross_entropy = nan +/- nan
+Overall test accuracy = nan +/- nan
+Overall test f1 = nan +/- nan
+Overall test mcc = nan +/- nan
+Elapsed time = 1 day, 1:19:07
