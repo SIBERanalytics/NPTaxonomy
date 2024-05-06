@@ -19,7 +19,8 @@ conda activate chemenv
 2. Download pretrained GCNN/SVM model (`model_SVM_last_FFN`) from Figshare (10.6084/m9.figshare.25745598) and put into `4_quickstart/`.
 3. Go to `4_quickstart/`.
 4. Edit (`test_data.csv`) to input the SMILES to be predicted.
-5. Run the code under the notebook (`Prediction.ipynb`) to obtain the predictions.
+5. Run the code under the notebook (`Prediction.ipynb`).
+6. Access predictions from (`test_data_preds.csv`).
 
 ## Directory structure
 - `0_data/`: Contains part of the source data used in the analysis. The rest has been uploaded to Figshare. (https://figshare.com/projects/Composite_Machine_Learning_Strategy_for_Natural_Products_Taxonomical_Classification_and_Structural_Insights/203637)
