@@ -32,6 +32,7 @@ conda activate chemenv
   + `3.1_tsne_analysis/`: t-distributed Stochastic Neighbor Embedding (t-SNE) analysis of 3 molecular fingerprints (MAP4, MPN, Last_FFN)
   + `3.2_tsne_comparison/`: Python script to reproduce comparison graphs of the 3 molecular fingerprints
   + `3.3_critical_substructures/`: Python script to reproduce critical substructures of the 5 kingdoms
+- `4_quickstart/`: Contains examples for use of pre-trained composite GCNN-SVM model.
 
 ## Instructions
 In the folder `0_data/`
