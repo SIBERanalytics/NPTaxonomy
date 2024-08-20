@@ -19,7 +19,7 @@ conda activate chemenv
 2. Go to `4_quickstart/`.
 3. Edit (`test_data.csv`) to input the SMILES to be predicted.
 4. Run the code under the notebook (`Prediction.ipynb`).
-5. Access predictions from (`test_data_preds.csv`).
+5. Access predictions from (`test_data_preds.csv`). Note that the example notebook runs the 3 pre-trained composite models GCNN-SVM, GCNN-LGBM, and GCNN-XGB.
 
 ## Directory structure
 - `0_data/`: Contains part of the source data used in the analysis. The rest has been uploaded to Figshare. (https://figshare.com/projects/Composite_Machine_Learning_Strategy_for_Natural_Products_Taxonomical_Classification_and_Structural_Insights/203637)
@@ -27,6 +27,8 @@ conda activate chemenv
 - `2_models/`: Contains retrieved and organized datasets for analysis and modeling.
   + `2.1_GCNN_model/`: Graph Convolutional Neural Network Model
   + `2.2_SVM_models/`: Composite GCNN-SVM (Support Vector Machine) Model
+  + `2.3_LGBM_models/`: Composite GCNN-LGBM (Light Gradient Boosting Machine) Model
+  + `2.4_XGB_models/`: Composite GCNN-XGB (Extreme Gradient Boosting) Model
 - `3_structural_analysis/`: Contains Python scripts for data processing, visualization, and structural analysis.
   + `3.1_tsne_analysis/`: t-distributed Stochastic Neighbor Embedding (t-SNE) analysis of 3 molecular fingerprints (MAP4, MPN, Last_FFN)
   + `3.2_tsne_comparison/`: Python script to reproduce comparison graphs of the 3 molecular fingerprints
@@ -36,7 +38,7 @@ conda activate chemenv
 ## Instructions
 In the folder `0_data/`
 - machine learning dataset ('np_5classes.csv')
-- test dataset ('npatlas_dataset.csv')
+- NP Atlas test dataset ('npatlas_dataset.csv')
   
 In the folder `1_dataset_preparation/`
 - Run the script `1_data_curation.py` to process the `lotusUniqueNaturalProduct.bson` (10.6084/m9.figshare.25745637) and curate the dataframe `df_curated.csv` (10.6084/m9.figshare.25745325) for data exploration.
@@ -47,10 +49,10 @@ In the folder `2_models/2.1_GCNN_model/`
 - Run the script `2_LOTUS_MPN_lastFFN_fingerprint.py` to generate the MPN (`lotus_MPN.csv`) and last_FFN (`lotus_last_FFN.csv`) fingerprints (10.6084/m9.figshare.25745448) of 133,092 NPs from the LOTUS database.
 - Run the script `3_NPAtlas_screening.py` to classify 13,136 NPs (bacteria and fungi) from the NPAtlas dataset (`npatlas_dataset.csv`) using pre-trained GCNN model, predictions are saved as `npatlas_preds.csv`. The MPN (`npatlas _MPN.csv`) and last_FFN (`npatlas _last_FFN.csv`) fingerprints (10.6084/m9.figshare.25745421) of 13,136 NPs of are also generated.
 
-In the folder `2_models/2.2_SVM_models/`
+In the folder `2_models/2.2_SVM_models/` and for LGBM and XGB models
 - Run the script `1_train_model_SVM_MPN.py` to construct a SVM model (`model_SVM_MPN`) (10.6084/m9.figshare.25745634) based the MPN fingerprints of the machine learning dataset (`lotus_MPN.csv`) (10.6084/m9.figshare.25745448).
-- Run the script `2_train_model_SVM_last_FFN.py` to construct a SVM model (`model_SVM_last_FFN`) (10.6084/m9.figshare.25745598) based the MPN fingerprints of the machine learning dataset (`lotus_ last_FFN.csv`) (10.6084/m9.figshare.25745448).
-- Run the script `3_SVM_prediction_NPAtlas.py` to classify 13,136 NPs from NPAtlas dataset (`npatlas_dataset.csv`) using the constructed SVM models (`model_SVM_MPN` and `model_SVM_last_FFN`).
+- Run the script `2_train_model_SVM_last_FFN.py` to construct a SVM model (`model_SVM_last_FFN`) (10.6084/m9.figshare.25745598) based the last_FFN fingerprints of the machine learning dataset (`lotus_ last_FFN.csv`) (10.6084/m9.figshare.25745448).
+- Run the script `3_SVM_prediction_NPAtlas.py` to classify 13,136 NPs from NPAtlas dataset (`npatlas_dataset.csv`) using the constructed GCNN-SVM models (`model_SVM_MPN` and `model_SVM_last_FFN`).
 
 In the folder `3_structural_analysis/3.1_tsne_analysis/`
 - Run the script `tsne_analysis.py` to plot and compare the Kullback-Leibler (KL) divergence and Davies-Bouldin (DB) score of 3 different molecular fingerprints (MAP4, MPN and last_FFN) of the 133,092 NPs from LOTUS database. The KL divergence and DB scores are plotted as function of the perplexity parameter in t-Distributed Stochastic Neighbor Embedding (t-SNE) analysis.
@@ -64,4 +66,6 @@ In the folder `3_structural_analysis/3.3_critical_substructures/`
 ## Notes
 GCNN models are based off Chemprop (https://github.com/chemprop/chemprop)
 
-Literature benchmarking was done using MAP4-SVM models from the manuscript - Capecchi, A., Reymond, JL. "Classifying natural products from plants, fungi or bacteria using the COCONUT database and machine learning" _J. Cheminform_ **13**, 82 (2021).(https://github.com/reymond-group/Coconut-TMAP-SVM)
+Training dataset obtained from the LOTUS initiative - Adriano Rutz, Maria Sorokina, Jakub Galgonek, Daniel Mietchen, Egon Willighagen, Arnaud Gaudry, James G Graham, Ralf Stephan, Roderic Page, Jiří Vondrášek, Christoph Steinbeck, Guido F Pauli, Jean-Luc Wolfender, Jonathan Bisson, Pierre-Marie Allard (2022) The LOTUS initiative for open knowledge management in natural products research. _eLife_ 11:e70780. https://doi.org/10.7554/eLife.70780
+
+Literature benchmarking was done using SVM / MAP4 fingerprint architecture from the manuscript - Capecchi, A., Reymond, JL. "Classifying natural products from plants, fungi or bacteria using the COCONUT database and machine learning" _J. Cheminform_ **13**, 82 (2021).(https://github.com/reymond-group/Coconut-TMAP-SVM)
